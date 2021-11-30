@@ -154,6 +154,8 @@ function reducer(state, action, previousState, instance) {
     const handleRowById = id => {
       const row = rowsById[id]
 
+      if (row === undefined) return
+      
       if (!row.isGrouped) {
         if (shouldExist) {
           newSelectedRowIds[id] = true
